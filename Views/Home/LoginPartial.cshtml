@@ -1,0 +1,40 @@
+<div>
+  @model LoginUser
+  <form asp-controller="" asp-action="">
+    <table>
+      <thead>
+        <tr>
+          <th><h2>Login</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+      <!-- Email -->
+        <tr>
+          <td>
+            <label asp-for="Email"></label>
+          </td>
+          <td>
+            <input type="email" asp-for="Email"></label>
+            <p asp-validation-for="Email"></p>
+          </td>
+        </tr>
+        <!-- Password -->
+        <tr>
+          <td>
+            <label asp-for="Password"></label>
+          </td>
+          <td>
+            <input type="password" asp-for="Password"></label>
+            <p asp-validation-for="Password"></p>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="submit" value="Log In">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

@@ -1,0 +1,70 @@
+<div>
+  @model User
+  <form asp-controller="" asp-action="">
+    <table>
+      <thead>
+        <tr>
+          <th><h2>Register</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- First Name -->
+        <tr>
+          <td>
+            <label asp-for="FirstName"></label>
+          </td>
+          <td>
+            <input type="text" asp-for="FirstName">
+            <p asp-validation-for="FirstName"></p>
+          </td>
+        </tr>
+        <!-- Last Name -->
+        <tr>
+          <td>
+            <label asp-for="LastName"></label>
+          </td>
+          <td>
+            <input type="text" asp-for="LastName">
+            <p asp-validation-for="LastName"></p>
+          </td>
+        </tr>
+        <!-- Email -->
+        <tr>
+          <td>
+            <label asp-for="Email"></label>
+          </td>
+          <td>
+            <input type="email" asp-for="Email">
+            <p asp-validation-for="Email"></p>
+          </td>
+        </tr>
+        <!-- Password -->
+        <tr>
+          <td>
+            <label asp-for="Password"></label>
+          </td>
+          <td>
+            <input type="password" asp-for="Password">
+            <p asp-validation-for="Password"></p>
+          </td>
+        </tr>
+        <!-- Password -->
+        <tr>
+          <td>
+            <label asp-for="Confirm"></label>
+          </td>
+          <td>
+            <input type="password" asp-for="Confirm">
+            <p asp-validation-for="Confirm"></p>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="submit" value="Submit">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
