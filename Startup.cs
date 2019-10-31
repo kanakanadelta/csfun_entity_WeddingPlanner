@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+using Microsoft.EntityFrameworkCore;
+using WeddingPlanner.Models;
+
 namespace WeddingPlanner
 {
     public class Startup
@@ -34,6 +37,9 @@ namespace WeddingPlanner
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddDbContext<WeddingContext>(options => options.UseMySql(Configuration["DBInfo:ConnectionString"]));
+
+            services.AddSession();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -50,6 +56,7 @@ namespace WeddingPlanner
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseSession();
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
