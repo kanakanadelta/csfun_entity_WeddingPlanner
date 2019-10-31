@@ -2976,6 +2976,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Home/ShowWedding.cshtml",
+      "TargetPath": "Views/Home/ShowWedding.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/Home/NewWedding.cshtml",
       "TargetPath": "Views/Home/NewWedding.cshtml",
       "FileKind": "mvc"

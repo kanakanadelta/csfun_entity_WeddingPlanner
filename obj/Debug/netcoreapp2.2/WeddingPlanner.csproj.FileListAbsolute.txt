@@ -31,3 +31,4 @@
 /Users/rtongson/Documents/csharp/entity/WeddingPlanner/obj/Debug/netcoreapp2.2/WeddingPlanner.csproj.CopyComplete
 /Users/rtongson/Documents/csharp/entity/WeddingPlanner/obj/Debug/netcoreapp2.2/Razor/Views/Home/Dashboard.g.cshtml.cs
 /Users/rtongson/Documents/csharp/entity/WeddingPlanner/obj/Debug/netcoreapp2.2/Razor/Views/Home/NewWedding.g.cshtml.cs
+/Users/rtongson/Documents/csharp/entity/WeddingPlanner/obj/Debug/netcoreapp2.2/Razor/Views/Home/ShowWedding.g.cshtml.cs

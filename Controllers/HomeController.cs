@@ -181,6 +181,23 @@ namespace WeddingPlanner.Controllers
             return View();
         }
 
+        [HttpGet("Weddings/{weddingId}")]
+        public IActionResult ShowWedding(int weddingId)
+        {
+            Wedding wedding = dbContext
+                .Weddings
+                .FirstOrDefault(w => w.WeddingId == weddingId);
+
+            List<User> attendees = dbContext
+                .Associations
+                .Where(a => a.WeddingId == weddingId)
+                .Select(a => a.User)
+                .ToList();
+
+            ViewBag.Guests = attendees;
+            return View(wedding);
+        }
+
         [HttpPost("CreateWedding")]
         public IActionResult CreateWedding(Wedding wedding, int userId)
         {

@@ -19,7 +19,11 @@
         @foreach(var w in @ViewBag.Weddings)
         {
           <tr>
-            <td>@w.WedderOne & @w.WedderTwo</td>
+            <td>
+              <a href="/Weddings/@w.WeddingId">
+                @w.WedderOne & @w.WedderTwo
+              </a>
+            </td>
             <td>@w.WeddingDate.ToString("dddd, dd MMMM yyyy")</td>
             <td>@w.Associations.Count</td>
             <td>
