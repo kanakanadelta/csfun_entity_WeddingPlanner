@@ -26,7 +26,11 @@ namespace WeddingPlanner.Models
         [Display(Name = "Wedding Address")]
         public string WeddingAddress { get; set; }
 
+        public DateTime CreatedAt {get;set;} = DateTime.Now;
+        public DateTime UpdatedAt {get;set;} = DateTime.Now;
+
         List<User> Guests { get; set; }
+
 
         public Wedding()
         {

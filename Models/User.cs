@@ -49,5 +49,12 @@ namespace WeddingPlanner.Models
         public DateTime CreatedAt {get;set;} = DateTime.Now;
         public DateTime UpdatedAt {get;set;} = DateTime.Now;
 
+        List<Wedding> Weddings { get; set; }
+
+        public User()
+        {
+            Weddings = new List<Wedding>();
+        }
+
     }
 }
