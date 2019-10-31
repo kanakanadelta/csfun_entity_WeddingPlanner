@@ -1,0 +1,56 @@
+@{
+  ViewData["Title"] = "Wedding Planner";
+}
+
+<div>
+  <h1>Plan Your Wedding, @ViewBag.UserName (id# @ViewBag.UserId)</h1>
+  @model Wedding
+  <form asp-controller="Home" asp-action="CreateWedding" method="POST">
+    <input type="hidden" name="userId" value='@ViewBag.UserId'>
+    <table>
+      <tbody>
+        <!-- Wedder One -->
+        <tr>
+          <td>
+            <label asp-for="WedderOne"></label>
+          </td>
+          <td>
+            <input type="text" asp-for="WedderOne">
+            <span asp-validation-for="WedderOne"></span>
+          </td>
+        </tr>
+        <!-- Wedder One -->
+        <tr>
+          <td>
+            <label asp-for="WedderTwo"></label>
+          </td>
+          <td>
+            <input type="text" asp-for="WedderTwo">
+            <span asp-validation-for="WedderTwo"></span>
+          </td>
+        </tr>
+        <!-- Wedder One -->
+        <tr>
+          <td>
+            <label asp-for="WeddingDate"></label>
+          </td>
+          <td>
+            <input type="date" asp-for="WeddingDate">
+            <span asp-validation-for="WeddingDate"></span>
+          </td>
+        </tr>
+        <!-- Wedder One -->
+        <tr>
+          <td>
+            <label asp-for="WeddingAddress"></label>
+          </td>
+          <td>
+            <input type="text" asp-for="WeddingAddress">
+            <span asp-validation-for="WeddingAddress"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="submit" value="Create">
+  </form>
+</div>

@@ -33,16 +33,11 @@ namespace WeddingPlanner.Models
         public DateTime CreatedAt {get;set;} = DateTime.Now;
         public DateTime UpdatedAt {get;set;} = DateTime.Now;
 
-        List<Association> Associations { get; set; }
+        public List<Association> Associations { get; set; }
 
 
         public Wedding()
         {
-            Associations = new List<Association>();
-        }
-        public Wedding(User planner)
-        {
-            Planner = planner;
             Associations = new List<Association>();
         }
 

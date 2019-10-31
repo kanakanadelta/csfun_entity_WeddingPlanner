@@ -1,6 +1,6 @@
 <div>
   @model LoginUser
-  <form asp-controller="" asp-action="">
+  <form asp-controller="Home" asp-action="LoginConfirm" method="POST">
     <table>
       <thead>
         <tr>
@@ -15,7 +15,7 @@
           </td>
           <td>
             <input type="email" asp-for="Email"></label>
-            <p asp-validation-for="Email"></p>
+            <p><span asp-validation-for="Email"></span></p>
           </td>
         </tr>
         <!-- Password -->
@@ -25,7 +25,9 @@
           </td>
           <td>
             <input type="password" asp-for="Password"></label>
-            <p asp-validation-for="Password"></p>
+            <p>
+              <span asp-validation-for="Password"></span>
+            </p>
           </td>
         </tr>
         <tr>

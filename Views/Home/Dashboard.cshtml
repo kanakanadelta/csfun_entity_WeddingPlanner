@@ -1,0 +1,55 @@
+@{
+  ViewData["Title"] = "Wedding Planner";
+}
+
+<div>
+  <h2>Welcome to the Wedding Planner, @ViewBag.UserName</h2>
+  <!-- TABLE -->
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Wedding</th>
+          <th>Date</th>
+          <th>Guest</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach(var w in @ViewBag.Weddings)
+        {
+          <tr>
+            <td>@w.WedderOne & @w.WedderTwo</td>
+            <td>@w.WeddingDate.ToString("dddd, dd MMMM yyyy")</td>
+            <td>@w.Associations.Count</td>
+            <td>
+              @if(w.Planner.UserId == @ViewBag.UserId)
+              {
+                <form action="/Weddings/@w.WeddingId/Delete" method="POST">
+                  <input type="hidden" name="userId" value='@ViewBag.UserId'>
+                  <input type="submit" value="Delete">
+                </form>
+              }
+              else if(@ViewBag.UserEvents.Contains(w))
+              {
+                <form action='/Weddings/@w.WeddingId/UnRsvp' method="POST">
+                  <input type="hidden" name="userId" value='@ViewBag.UserId'>
+                  <input type="submit" value="Un-RSVP">
+                </form>
+              }
+              else
+              {
+                <form action='/Weddings/@w.WeddingId/Rsvp' method="POST">
+                  <input type="hidden" name="userId" value='@ViewBag.UserId'>
+                  <input type="submit" value="RSVP">
+                </form>
+              }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  <!-- New Wedding -->
+  <a asp-controller="Home" asp-action="NewWedding">New Wedding</a>
+</div>

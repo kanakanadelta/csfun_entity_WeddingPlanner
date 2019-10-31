@@ -2961,6 +2961,11 @@
   "RootNamespace": "WeddingPlanner",
   "Documents": [
     {
+      "FilePath": "Views/Home/Dashboard.cshtml",
+      "TargetPath": "Views/Home/Dashboard.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/Home/Privacy.cshtml",
       "TargetPath": "Views/Home/Privacy.cshtml",
       "FileKind": "mvc"
@@ -2968,6 +2973,11 @@
     {
       "FilePath": "Views/Home/LoginPartial.cshtml",
       "TargetPath": "Views/Home/LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Home/NewWedding.cshtml",
+      "TargetPath": "Views/Home/NewWedding.cshtml",
       "FileKind": "mvc"
     },
     {

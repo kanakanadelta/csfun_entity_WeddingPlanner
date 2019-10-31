@@ -10,6 +10,7 @@ namespace WeddingPlanner.Models
     public class User
     {
         [Key]
+        [ForeignKey("UId")]
         public int UserId { get; set; }
 
         [Required]
@@ -50,7 +51,7 @@ namespace WeddingPlanner.Models
         public DateTime UpdatedAt {get;set;} = DateTime.Now;
 
 
-        List<Association> Associations { get; set; }
+        public List<Association> Associations { get; set; }
         public User()
         {
             Associations = new List<Association>();
