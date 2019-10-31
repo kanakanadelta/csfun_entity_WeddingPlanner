@@ -49,11 +49,11 @@ namespace WeddingPlanner.Models
         public DateTime CreatedAt {get;set;} = DateTime.Now;
         public DateTime UpdatedAt {get;set;} = DateTime.Now;
 
-        List<Wedding> WeddingsToAttend { get; set; }
 
+        List<Association> Associations { get; set; }
         public User()
         {
-            WeddingsToAttend = new List<Wedding>();
+            Associations = new List<Association>();
         }
 
     }
