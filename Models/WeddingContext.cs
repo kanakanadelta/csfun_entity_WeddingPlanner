@@ -6,7 +6,8 @@ namespace WeddingPlanner.Models
     {
         public WeddingContext(DbContextOptions options) : base(options) {}
 
-        DbSet<User> Users { get; set; }
-        DbSet<Wedding> Weddings { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Wedding> Weddings { get; set; }
+        public DbSet<Association> Associations { get; set; }
     }
 }

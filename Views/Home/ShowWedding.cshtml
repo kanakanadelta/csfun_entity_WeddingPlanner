@@ -1,0 +1,15 @@
+@{
+  ViewData["Title"] = "Wedding Planner";
+}
+@model Wedding
+<div>
+  <h1>@Model.WedderOne and @Model.WedderTwo's Wedding </h1>
+  <br>
+  <h2>Guests:</h2>
+  <ul>
+    @foreach(var g in ViewBag.Guests)
+    {
+      <li>@g.FirstName @g.LastName</li>
+    }
+  </ul>
+</div>
