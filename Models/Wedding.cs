@@ -8,7 +8,9 @@ namespace WeddingPlanner.Models
     public class Wedding
     {
         [Key]
-        public string WeddingId { get; set; }
+        public int WeddingId { get; set; }
+
+        public User Planner { get; set; }
 
         [Required]
         [Display(Name = "Wedder One")]
@@ -17,10 +19,9 @@ namespace WeddingPlanner.Models
         
         [Required]
         [Display(Name = "Wedder Two")]
-        public User WedderTwo { get; set; }
+        public string WedderTwo { get; set; }
 
         [Display(Name = "Wedding Date")]
-
         [Startup.MyDate(ErrorMessage ="Invalid date")]
         [DataType(DataType.Date)]
         public DateTime WeddingDate { get; set; }
@@ -37,6 +38,11 @@ namespace WeddingPlanner.Models
 
         public Wedding()
         {
+            Associations = new List<Association>();
+        }
+        public Wedding(User planner)
+        {
+            Planner = planner;
             Associations = new List<Association>();
         }
 

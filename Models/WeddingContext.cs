@@ -8,5 +8,6 @@ namespace WeddingPlanner.Models
 
         DbSet<User> Users { get; set; }
         DbSet<Wedding> Weddings { get; set; }
+        DbSet<Association> Associations { get; set; }
     }
 }

@@ -17,6 +17,28 @@ namespace WeddingPlanner.Migrations
                 .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("WeddingPlanner.Models.Association", b =>
+                {
+                    b.Property<int>("AssociationId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<DateTime>("UpdatedAt");
+
+                    b.Property<int>("UserId");
+
+                    b.Property<int>("WeddingId");
+
+                    b.HasKey("AssociationId");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("WeddingId");
+
+                    b.ToTable("Associations");
+                });
+
             modelBuilder.Entity("WeddingPlanner.Models.User", b =>
                 {
                     b.Property<int>("UserId")
@@ -49,17 +71,20 @@ namespace WeddingPlanner.Migrations
 
             modelBuilder.Entity("WeddingPlanner.Models.Wedding", b =>
                 {
-                    b.Property<string>("WeddingId")
+                    b.Property<int>("WeddingId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreatedAt");
+
+                    b.Property<int?>("PlannerUserId");
 
                     b.Property<DateTime>("UpdatedAt");
 
                     b.Property<string>("WedderOne")
                         .IsRequired();
 
-                    b.Property<int>("WedderTwoUserId");
+                    b.Property<string>("WedderTwo")
+                        .IsRequired();
 
                     b.Property<string>("WeddingAddress")
                         .IsRequired();
@@ -68,17 +93,29 @@ namespace WeddingPlanner.Migrations
 
                     b.HasKey("WeddingId");
 
-                    b.HasIndex("WedderTwoUserId");
+                    b.HasIndex("PlannerUserId");
 
                     b.ToTable("Weddings");
                 });
 
+            modelBuilder.Entity("WeddingPlanner.Models.Association", b =>
+                {
+                    b.HasOne("WeddingPlanner.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("WeddingPlanner.Models.Wedding", "Wedding")
+                        .WithMany()
+                        .HasForeignKey("WeddingId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("WeddingPlanner.Models.Wedding", b =>
                 {
-                    b.HasOne("WeddingPlanner.Models.User", "WedderTwo")
+                    b.HasOne("WeddingPlanner.Models.User", "Planner")
                         .WithMany()
-                        .HasForeignKey("WedderTwoUserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("PlannerUserId");
                 });
 #pragma warning restore 612, 618
         }
