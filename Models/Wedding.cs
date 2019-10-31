@@ -20,6 +20,9 @@ namespace WeddingPlanner.Models
         public User WedderTwo { get; set; }
 
         [Display(Name = "Wedding Date")]
+
+        [Startup.MyDate(ErrorMessage ="Invalid date")]
+        [DataType(DataType.Date)]
         public DateTime WeddingDate { get; set; }
 
         [Required]
